@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Spinner } from '../components/Spinner';
+import { Spinner } from '../components/Spinner/Spinner';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faPencilAlt, faTimes } from "@fortawesome/free-solid-svg-icons";

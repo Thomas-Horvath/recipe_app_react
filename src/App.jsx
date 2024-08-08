@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, NavLink , Routes , Route , Navigate } from 'react-router-dom';
-import  RecipeCreate  from "./pages/RecipeCreate";
+import { RecipeCreate }  from "./pages/RecipeCreate";
 import  RecipeEdit  from "./pages/RecipeEdit";
 import  RecipeSingle  from "./pages/RecipeSingle";
 import  RecipeList  from "./pages/RecipeList";
