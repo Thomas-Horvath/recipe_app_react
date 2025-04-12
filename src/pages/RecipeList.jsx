@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faPencilAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from '../components/Modal'
+import './style.css';
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -50,12 +51,13 @@ const RecipeList = () => {
 
 
       {alignToRows(recipes).map((row, i) => (
+     
         <div className="row mb-3" key={i}>
           {row.map((recipe) => (
             <div className="col-md-4" key={recipe.id}>
               <div className="card w-100 h-100">
                 <div className="card w-100 h-100">
-                  <img className="card-img-top mb-2" src={`${process.env.REACT_APP_BACKEND_URL}/static/images/${recipe.imageURL}`} alt='Kép' />
+                  <img className="card-img-top mb-2 img" src={`${process.env.REACT_APP_BACKEND_URL}/static/images/${recipe.imageURL}`} alt='Kép' />
                   <div className="card-body">
                     <h5 className="card-title">{recipe.name}</h5>
                   </div>
@@ -95,11 +97,21 @@ const RecipeList = () => {
   );
 }
 
-const alignToRows = (items) =>
-  items.slice().reduceRight((acc, curr, i, arr) => {
-    acc.push(arr.splice(0, 3));
-    return acc;
-  }, []);
+// const alignToRows = (items) =>
+//   items.slice().reduceRight((acc, curr, i, arr) => {
+//     acc.push(arr.splice(0, 3));
+//     return acc;
+//   }, []);
+
+
+const alignToRows = (items) => {
+  const copy = items.slice();
+  const result = [];
+  while (copy.length > 0) {
+    result.push(copy.splice(0, 3));
+  }
+  return result;
+};
 
 
 export default RecipeList

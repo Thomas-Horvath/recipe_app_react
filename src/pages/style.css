@@ -1,0 +1,12 @@
+.card {
+    overflow: hidden;
+}
+
+.img {
+    max-height: 15rem;
+    object-fit: cover;
+    transition: all .3s;
+    &:hover {
+        transform: scale(1.05);
+    }
+}
